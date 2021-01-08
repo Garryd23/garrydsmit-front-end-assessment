@@ -1,3 +1,5 @@
 import "../css/styles.css";
 
-alert("Hello");
+if (module.hot) {
+  module.hot.accept();
+}
