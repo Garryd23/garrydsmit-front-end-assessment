@@ -1,8 +1,4 @@
-body {
-  background-image: url("./assets/images/paris-m.jpg");
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
+@import "normalize.css";
+@import "base/_variables.css";
+@import "base/_global.css";
+@import "modules/_tabbed-box.css";

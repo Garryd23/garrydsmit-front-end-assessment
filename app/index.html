@@ -2,10 +2,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/3b3e274f66.js" crossorigin="anonymous"></script>
     <title>CIB Digital Tech – Front End Assessment</title>
   </head>
-  <body>
-    fhdghgh 34
+  <body class="bg">
+    <div class="tabbed-box">
+      <div class="tabbed-box__tabs">
+        <div class="tabbed-box__tabs--links is-active"><i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights</div>
+        <div class="tabbed-box__tabs--links"><i class="fas fa-hotel"></i> Hotels</div>
+        <div class="tabbed-box__tabs--links">Flights + Hotels <span>Save</span></div>
+        <div class="tabbed-box__tabs--links"><i class="fas fa-gift"></i> Holidays</div>
+      </div>
+      <div class="tabbed-box__tabcontent">
+        <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR FLIGHTS</h2>
+        <div class="tabbed-box__tabcontent--btnGroup">
+          <button class="is-selected">Domestic</button>
+          <button>International</button>
+        </div>
+        <div style="clear: both"></div>
+
+        <form class="tabbed-box__tabcontent--flights-form">
+          <div class="tabbed-box__tabcontent--flights-form__row">
+            <div class="tabbed-box__tabcontent--flights-form__item col-2">
+              <div><label for="from">FROM</label></div>
+              <input type="text" name="from" id="from" placeholder="Eg. Melbourne, Australia" />
+            </div>
+            <div class="tabbed-box__tabcontent--flights-form__item col-2">
+              <div><label for="to">TO</label></div>
+              <input type="text" name="to" id="to" placeholder="Eg. New York, United States" />
+            </div>
+          </div>
+          <div style="clear: both"></div>
+          <div class="tabbed-box__tabcontent--flights-form__row">
+            <div class="tabbed-box__tabcontent--flights-form__item col-3">
+              <div><label for="departure">DEPARTURE</label></div>
+              <input type="text" name="departure" id="departure" placeholder="MM/DD/YYYY" />
+            </div>
+            <div class="tabbed-box__tabcontent--flights-form__item col-3">
+              <div><label for="RETURN">RETURN</label></div>
+              <input type="text" name="RETURN" id="RETURN" placeholder="MM/DD/YYYY" />
+            </div>
+            <div class="tabbed-box__tabcontent--flights-form__item col-3">
+              <div><label for="ADULTS">ADULTS</label></div>
+              <input type="text" name="ADULTS" id="ADULTS" placeholder="2" />
+            </div>
+          </div>
+          <div style="clear: both"></div>
+          <button class="tabbed-box__tabcontent--search">SEARCH FLIGHTS</button>
+          <p class="tabbed-box__tabcontent--advanced-search">Advanced Search</p>
+          <div style="clear: both"></div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
 <script src="bundle.js"></script>
