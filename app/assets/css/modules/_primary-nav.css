@@ -16,10 +16,14 @@
       float: left;
       padding: 10px 12px;
       transition: 0.3s ease-out;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
+
+      @mixin atMedium {
+        font-size: 0.8rem;
+      }
 
       @mixin atLarge {
-        font-size: 1rem;
+        padding: 10px 19px;
       }
 
       &--is-current {

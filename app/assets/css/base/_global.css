@@ -2,20 +2,8 @@ body {
   font-family: sans-serif;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 * {
   box-sizing: border-box;
-}
-.bg {
-  background-image: url("./assets/images/paris-l.jpg");
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .col-2 {
