@@ -4,12 +4,66 @@
   position: absolute;
   width: 100%;
 
+  &__menu-content {
+    display: none;
+
+    &--is-visible {
+      display: block;
+    }
+
+    @mixin atMedium {
+      display: block;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    letter-spacing: -2px;
+    font-size: 3.2rem;
+    text-decoration: none;
+
+    @mixin atMedium {
+      left: 0;
+      transform: translateX(0);
+      padding-left: 12px;
+      margin-top: 70px;
+      width: auto;
+      float: left;
+    }
+
+    @mixin atLarge {
+      padding-left: 9.375rem;
+    }
+  }
+
+  &__menu-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: white;
+    height: 45px;
+    width: 45px;
+    z-index: 10;
+    &:hover {
+      background-color: red;
+    }
+    @mixin atMedium {
+      display: none;
+    }
+  }
+
   &__top-bar {
     top: 0;
     padding: 0;
-
     width: 100%;
     border-bottom: 2px solid $hoverGray;
+
+    @mixin atMedium {
+      display: inline-block;
+    }
 
     a {
       color: #efeee6;
@@ -20,21 +74,6 @@
   &__main {
     margin-top: 40px;
     @mixin clearfix;
-
-    &-logo {
-      width: 100%;
-      text-align: center;
-      color: white;
-      letter-spacing: -2px;
-      float: left;
-      font-size: 3.2rem;
-      text-decoration: none;
-
-      @mixin atMedium {
-        width: auto;
-        float: left;
-      }
-    }
   }
 }
 
