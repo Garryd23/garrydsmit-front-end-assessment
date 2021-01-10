@@ -1,0 +1,15 @@
+.site-socials {
+  margin: 0;
+  float: right;
+  list-style-type: none;
+
+  &__item {
+    margin-top: 0;
+    float: left;
+    padding: 12.5px;
+
+    &:hover {
+      background-color: $hoverGray;
+    }
+  }
+}

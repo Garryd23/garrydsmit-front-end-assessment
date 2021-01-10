@@ -1,0 +1,63 @@
+.site-header {
+  @mixin clearfix;
+  color: white;
+
+  &__top-bar {
+    position: absolute;
+    top: 0;
+    padding: 0;
+
+    width: 100%;
+    border-bottom: 2px solid $hoverGray;
+
+    a {
+      color: #efeee6;
+      text-decoration: none;
+    }
+  }
+
+  &__main {
+    margin-top: 80px;
+    @mixin clearfix;
+
+    &-logo {
+      width: 100%;
+      text-align: center;
+      color: white;
+      letter-spacing: -2px;
+      float: left;
+      font-size: 3.2rem;
+      text-decoration: none;
+
+      @mixin atMedium {
+        width: auto;
+        float: left;
+      }
+    }
+  }
+}
+
+.top-bar-nav {
+  float: left;
+  &-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    :not(:last-child) {
+      border-right: 2px solid $hoverGray;
+    }
+
+    &__item {
+      float: left;
+      padding: 12.5px;
+      &:hover {
+        background-color: $hoverGray;
+        border-color: transparent;
+      }
+    }
+  }
+}
+.dropdown {
+  font-size: 0.8rem;
+}

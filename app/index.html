@@ -6,52 +6,121 @@
     <title>CIB Digital Tech – Front End Assessment</title>
   </head>
   <body class="bg">
-    <div class="tabbed-box">
-      <div class="tabbed-box__tabs">
-        <div class="tabbed-box__tabs--links is-active"><i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights</div>
-        <div class="tabbed-box__tabs--links"><i class="fas fa-hotel"></i> Hotels</div>
-        <div class="tabbed-box__tabs--links">Flights + Hotels <span>Save</span></div>
-        <div class="tabbed-box__tabs--links"><i class="fas fa-gift"></i> Holidays</div>
-      </div>
-      <div class="tabbed-box__tabcontent">
-        <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR FLIGHTS</h2>
-        <div class="tabbed-box__tabcontent--btnGroup">
-          <button class="is-selected">Domestic</button>
-          <button>International</button>
+    <header class="site-header">
+      <div class="site-header__top-bar">
+        <div class="wrapper">
+          <nav class="top-bar-nav">
+            <ul class="top-bar-nav-list">
+              <li class="top-bar-nav-list__item"><a href="#">HOME</a></li>
+              <li class="top-bar-nav-list__item"><a href="#">FAQS</a></li>
+              <li class="top-bar-nav-list__item"><a href="#">CONTACT</a></li>
+              <li class="top-bar-nav-list__item">
+                <a href="#">USD <i class="fas fa-chevron-down dropdown"></i></a>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <ul class="site-socials">
+              <li class="site-socials__item">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li class="site-socials__item">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li class="site-socials__item">
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              </li>
+              <li class="site-socials__item">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li class="site-socials__item">
+                <a href="tel: 1800 105 2541"><i class="fas fa-phone-alt"></i></a>
+              </li>
+              <li class="site-socials__item">
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div style="clear: both"></div>
+      </div>
+      <div class="wrapper">
+        <div class="site-header__main">
+          <a class="site-header__main-logo" href="index.html">canvas</a>
+          <div class="site-header__main-menu-icon">
+            <div class="site-header__menu-icon__middle"></div>
+          </div>
+          <nav class="primary-nav">
+            <ul class="primary-nav__list">
+              <li class="primary-nav__list-item primary-nav__list-item--is-current">
+                <a href="#"><i class="fas fa-home primary-nav-icon"></i> HOME</a>
+              </li>
+              <li class="primary-nav__list-item">
+                <a href="#"><i class="fas fa-plane tabbed-box__tabs--links--planeicon primary-nav-icon"></i> FLIGHTS</a>
+              </li>
+              <li class="primary-nav__list-item">
+                <a href="#"><i class="fas fa-hotel primary-nav-icon"></i> HOTELS</a>
+              </li>
+              <li class="primary-nav__list-item">
+                <a href="#"><i class="fas fa-gift primary-nav-icon"></i> HOLIDAYS</a>
+              </li>
+              <li class="primary-nav__list-item">
+                <a href="#"><i class="fas fa-pen primary-nav-icon"></i> BLOG</a>
+              </li>
+              <li class="primary-nav__list-item">
+                <a href="tel: 1800 105 2541"><i class="fas fa-phone-alt primary-nav-icon"></i> 1800 105 2541</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="tabbed-box">
+        <div class="tabbed-box__tabs">
+          <div class="tabbed-box__tabs--links is-active"><i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights</div>
+          <div class="tabbed-box__tabs--links"><i class="fas fa-hotel"></i> Hotels</div>
+          <div class="tabbed-box__tabs--links">Flights + Hotels <span>Save</span></div>
+          <div class="tabbed-box__tabs--links"><i class="fas fa-gift"></i> Holidays</div>
+        </div>
+        <div class="tabbed-box__tabcontent">
+          <div class="tabbed-box__tabcontent--row">
+            <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR FLIGHTS</h2>
+            <div class="tabbed-box__tabcontent--btnGroup">
+              <button class="is-selected">Domestic</button>
+              <button>International</button>
+            </div>
+          </div>
+          <form class="tabbed-box__tabcontent--flights-form">
+            <div class="tabbed-box__tabcontent--flights-form__row">
+              <div class="tabbed-box__tabcontent--flights-form__item col-2">
+                <div><label for="from">FROM</label></div>
+                <input type="text" name="from" id="from" placeholder="Eg. Melbourne, Australia" />
+              </div>
+              <div class="tabbed-box__tabcontent--flights-form__item col-2">
+                <div><label for="to">TO</label></div>
+                <input type="text" name="to" id="to" placeholder="Eg. New York, United States" />
+              </div>
+            </div>
 
-        <form class="tabbed-box__tabcontent--flights-form">
-          <div class="tabbed-box__tabcontent--flights-form__row">
-            <div class="tabbed-box__tabcontent--flights-form__item col-2">
-              <div><label for="from">FROM</label></div>
-              <input type="text" name="from" id="from" placeholder="Eg. Melbourne, Australia" />
+            <div class="tabbed-box__tabcontent--flights-form__row">
+              <div class="tabbed-box__tabcontent--flights-form__item col-3">
+                <div><label for="departure">DEPARTURE</label></div>
+                <input type="text" name="departure" id="departure" placeholder="MM/DD/YYYY" />
+              </div>
+              <div class="tabbed-box__tabcontent--flights-form__item col-3">
+                <div><label for="RETURN">RETURN</label></div>
+                <input type="text" name="RETURN" id="RETURN" placeholder="MM/DD/YYYY" />
+              </div>
+              <div class="tabbed-box__tabcontent--flights-form__item col-3">
+                <div><label for="ADULTS">ADULTS</label></div>
+                <input type="text" name="ADULTS" id="ADULTS" placeholder="2" />
+              </div>
             </div>
-            <div class="tabbed-box__tabcontent--flights-form__item col-2">
-              <div><label for="to">TO</label></div>
-              <input type="text" name="to" id="to" placeholder="Eg. New York, United States" />
-            </div>
-          </div>
-          <div style="clear: both"></div>
-          <div class="tabbed-box__tabcontent--flights-form__row">
-            <div class="tabbed-box__tabcontent--flights-form__item col-3">
-              <div><label for="departure">DEPARTURE</label></div>
-              <input type="text" name="departure" id="departure" placeholder="MM/DD/YYYY" />
-            </div>
-            <div class="tabbed-box__tabcontent--flights-form__item col-3">
-              <div><label for="RETURN">RETURN</label></div>
-              <input type="text" name="RETURN" id="RETURN" placeholder="MM/DD/YYYY" />
-            </div>
-            <div class="tabbed-box__tabcontent--flights-form__item col-3">
-              <div><label for="ADULTS">ADULTS</label></div>
-              <input type="text" name="ADULTS" id="ADULTS" placeholder="2" />
-            </div>
-          </div>
-          <div style="clear: both"></div>
-          <button class="tabbed-box__tabcontent--search">SEARCH FLIGHTS</button>
-          <p class="tabbed-box__tabcontent--advanced-search">Advanced Search</p>
-          <div style="clear: both"></div>
-        </form>
+
+            <button class="tabbed-box__tabcontent--search">SEARCH FLIGHTS</button>
+            <p class="tabbed-box__tabcontent--advanced-search">Advanced Search</p>
+          </form>
+        </div>
       </div>
     </div>
   </body>
