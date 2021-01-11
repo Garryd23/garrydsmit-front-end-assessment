@@ -1,7 +1,12 @@
 .site-socials {
-  margin: 0;
-  float: right;
+  display: inline-block;
   list-style-type: none;
+  padding: 0;
+
+  @mixin atMedium {
+    margin: 0;
+    float: right;
+  }
 
   &__item {
     margin-top: 0;

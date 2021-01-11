@@ -3,16 +3,39 @@
   color: white;
   position: absolute;
   width: 100%;
+  transition: background-color 0.3s ease-out;
+
+  &--is-expanded {
+    z-index: 10;
+    height: 450px;
+    background-color: rgba(79, 75, 90, 0.9);
+    @mixin atMedium {
+      height: auto;
+    }
+  }
 
   &__menu-content {
-    display: none;
+    opacity: 0;
+    width: 100%;
+    transform: scale(1.2);
+    transition: all 0.5s ease-out;
+    text-align: center;
+    position: relative;
+    z-index: -10;
 
     &--is-visible {
-      display: block;
+      transform: scale(1);
+      opacity: 1;
+      position: absolute;
+      z-index: 9;
+      padding: 0;
     }
 
     @mixin atMedium {
+      opacity: 1;
       display: block;
+      background-color: transparent;
+      z-index: 9;
     }
   }
 
@@ -24,6 +47,7 @@
     letter-spacing: -2px;
     font-size: 3.2rem;
     text-decoration: none;
+    z-index: 10;
 
     @mixin atMedium {
       left: 0;
@@ -56,13 +80,19 @@
   }
 
   &__top-bar {
-    top: 0;
+    margin-top: 60px;
+    bottom: 0;
     padding: 0;
     width: 100%;
     border-bottom: 2px solid $hoverGray;
 
     @mixin atMedium {
+      margin-top: 0;
+      position: relative;
       display: inline-block;
+      top: 0;
+      width: 100%;
+      border-bottom: 2px solid $hoverGray;
     }
 
     a {
@@ -72,14 +102,23 @@
   }
 
   &__main {
-    margin-top: 40px;
+    margin-top: 10px;
     @mixin clearfix;
+
+    @mixin atMedium {
+      margin-top: 40px;
+    }
   }
 }
 
 .top-bar-nav {
-  float: left;
+  display: inline-block;
+  @mixin atMedium {
+    float: left;
+  }
+
   &-list {
+    font-size: 1rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -90,14 +129,24 @@
 
     &__item {
       float: left;
-      padding: 12.5px;
-      &:hover {
-        background-color: $hoverGray;
-        border-color: transparent;
+      padding: 5px;
+
+      @mixin atMedium {
+        padding: 12.5px;
+
+        &:hover {
+          background-color: $hoverGray;
+          border-color: transparent;
+        }
+      }
+
+      a {
+        font-size: 0.7rem;
+
+        @mixin atMedium {
+          font-size: 1rem;
+        }
       }
     }
   }
-}
-.dropdown {
-  font-size: 0.8rem;
 }

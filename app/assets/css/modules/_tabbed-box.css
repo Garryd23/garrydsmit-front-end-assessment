@@ -1,5 +1,6 @@
 .tabbed-box {
   position: absolute;
+
   top: 150;
   max-width: 95%;
   @mixin atMedium {
