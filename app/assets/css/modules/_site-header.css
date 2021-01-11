@@ -32,6 +32,7 @@
     }
 
     @mixin atMedium {
+      transform: scale(1);
       opacity: 1;
       display: block;
       background-color: transparent;
@@ -53,7 +54,7 @@
       left: 0;
       transform: translateX(0);
       padding-left: 12px;
-      margin-top: 70px;
+      margin-top: 80px;
       width: auto;
       float: left;
     }
@@ -67,15 +68,65 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: white;
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     z-index: 10;
-    &:hover {
-      background-color: red;
+
+    &::before {
+      transform-origin: 0 0;
+      transition: all 0.3s ease-out;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      border-radius: 5px;
+      height: 7px;
+      background-color: #fff;
     }
+
+    &__middle {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 40px;
+      border-radius: 5px;
+      height: 6px;
+      background-color: #fff;
+      transform-origin: left center;
+      transition: all 0.4s ease-out;
+    }
+
+    &::after {
+      transform-origin: 0 100%;
+      transition: all 0.3s ease-out;
+      content: "";
+      position: absolute;
+      bottom: 2;
+      left: 0;
+      width: 40px;
+      border-radius: 5px;
+      height: 7px;
+      background-color: #fff;
+    }
+
     @mixin atMedium {
       display: none;
+    }
+  }
+
+  &__menu-icon--close {
+    &::before {
+      transform: rotate(45deg) scaleX(1.19);
+    }
+
+    .site-header__menu-icon__middle {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    &::after {
+      transform: rotate(-45deg) scaleX(1.19);
     }
   }
 
@@ -83,14 +134,13 @@
     margin-top: 60px;
     bottom: 0;
     padding: 0;
-    width: 100%;
+
     border-bottom: 2px solid $hoverGray;
 
     @mixin atMedium {
       margin-top: 0;
       position: relative;
       display: inline-block;
-      top: 0;
       width: 100%;
       border-bottom: 2px solid $hoverGray;
     }

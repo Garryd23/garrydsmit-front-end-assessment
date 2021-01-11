@@ -13,3 +13,13 @@ body {
 .col-3 {
   width: 33.3%;
 }
+
+.attention {
+  padding: 3px 4px;
+  border-radius: 2px;
+  background-color: #d0534e;
+  font-size: 0.5rem;
+  @mixin atMedium {
+    font-size: 0.7rem;
+  }
+}
