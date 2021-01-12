@@ -351,6 +351,7 @@ template {
 
 body {
   font-family: sans-serif;
+  width: 100%;
 }
 
 * {
@@ -455,7 +456,7 @@ body {
 
 .site-header__menu-content {
     opacity: 0;
-    width: 100%;
+    width: 80%;
     transform: scale(1.2);
     transition: all 0.5s ease-out;
     text-align: center;
@@ -464,6 +465,7 @@ body {
   }
 
 .site-header__menu-content--is-visible {
+      width: 100%;
       transform: scale(1);
       opacity: 1;
       position: absolute;
@@ -477,6 +479,7 @@ body {
       transform: scale(1);
       opacity: 1;
       display: block;
+      width: 100%;
       background-color: transparent;
       z-index: 9
   }
@@ -582,7 +585,7 @@ body {
     margin-top: 60px;
     bottom: 0;
     padding: 0;
-
+    position: relative;
     border-bottom: 2px solid rgba(204, 204, 204, 0.2);
   }
 
