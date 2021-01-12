@@ -94,7 +94,7 @@
       height: 6px;
       background-color: #fff;
       transform-origin: left center;
-      transition: all 0.4s ease-out;
+      transition: transform 0.3s ease-out;
     }
 
     &::after {
@@ -121,7 +121,6 @@
     }
 
     .site-header__menu-icon__middle {
-      opacity: 0;
       transform: scale(0);
     }
 
@@ -141,6 +140,7 @@
       margin-top: 0;
       position: relative;
       display: inline-block;
+
       width: 100%;
       border-bottom: 2px solid $hoverGray;
     }
@@ -153,6 +153,7 @@
 
   &__main {
     margin-top: 10px;
+
     @mixin clearfix;
 
     @mixin atMedium {
@@ -162,6 +163,7 @@
 }
 
 .top-bar-nav {
+  position: relative;
   display: inline-block;
   @mixin atMedium {
     float: left;
@@ -175,12 +177,17 @@
 
     :not(:last-child) {
       border-right: 2px solid $hoverGray;
+      &.dropdown-container__dropdown__trigger,
+      &.dropdown-container__dropdown__trigger span,
+      &.dropdown-container__dropdown-options-option {
+        border: none;
+      }
     }
 
     &__item {
       float: left;
       padding: 5px;
-
+      z-index: 1;
       @mixin atMedium {
         padding: 12.5px;
 
@@ -198,5 +205,105 @@
         }
       }
     }
+  }
+}
+.dropdown {
+  cursor: pointer;
+}
+
+.dropdown-container {
+  padding-top: 4px;
+  color: #efeee6;
+  position: relative;
+  user-select: none;
+
+  @mixin atMedium {
+    padding-top: 0px;
+  }
+
+  &__dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__trigger {
+      font-size: 0.7rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-color: transparent;
+
+      cursor: pointer;
+
+      @mixin atMedium {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__dropdown-options {
+    position: absolute;
+    display: block;
+    top: 170%;
+    left: 0;
+    right: 0;
+    border-top: 0;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform-origin: center top;
+    transform: scaleY(0);
+    background-color: $hoverGray;
+    text-align: center;
+
+    &-is-open {
+      transform: scaleY(1);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      z-index: 10;
+    }
+
+    &-option {
+      position: relative;
+      display: block;
+      padding: 10px 0px;
+      font-size: 0.7rem;
+      @mixin atMedium {
+        font-size: 1rem;
+      }
+      font-weight: 300;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s;
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.507);
+      }
+      &.selected {
+        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: rgb(126, 126, 126);
+        background-color: rgba(255, 255, 255, 0.507);
+      }
+    }
+  }
+}
+.dropdown {
+  position: absolute;
+  left: -50%;
+  top: -150%;
+  @mixin atMedium {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+.dropdown-arrow {
+  transition: transform 0.3s ease-out;
+  &-is-rotated {
+    transform: rotate(180deg);
   }
 }

@@ -27,11 +27,22 @@
                 <li class="top-bar-nav-list__item"><a href="#">HOME</a></li>
                 <li class="top-bar-nav-list__item"><a href="#">FAQS</a></li>
                 <li class="top-bar-nav-list__item"><a href="#">CONTACT</a></li>
-                <li class="top-bar-nav-list__item">
-                  <a href="#">USD <i class="fas fa-chevron-down dropdown"></i></a>
+                <li class="top-bar-nav-list__item dropdown">
+                  <div class="dropdown-container">
+                    <div class="dropdown-container__dropdown">
+                      <div class="dropdown-container__dropdown__trigger"><span>USD </span> <i class="fas fa-chevron-down dropdown-arrow"></i></div>
+                      <div class="dropdown-container__dropdown-options">
+                        <span class="dropdown-container__dropdown-options-option selected" data-value="USD">USD</span>
+                        <span class="dropdown-container__dropdown-options-option" data-value="EUR">EUR</span>
+                        <span class="dropdown-container__dropdown-options-option" data-value="GBP">GBP</span>
+                        <span class="dropdown-container__dropdown-options-option" data-value="ZAR">ZAR</span>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </nav>
+
             <div>
               <ul class="site-socials">
                 <li class="site-socials__item">
@@ -50,7 +61,7 @@
                   <a href="tel: 1800 105 2541"><i class="fas fa-phone-alt"></i></a>
                 </li>
                 <li class="site-socials__item">
-                  <a href="#"><i class="fas fa-envelope"></i></a>
+                  <a href="mailto:canvas@canvas.can"><i class="fas fa-envelope"></i></a>
                 </li>
               </ul>
             </div>
@@ -87,49 +98,93 @@
     <div class="wrapper">
       <div class="tabbed-box">
         <div class="tabbed-box__tabs">
-          <div class="tabbed-box__tabs--links is-active"><i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights</div>
-          <div class="tabbed-box__tabs--links"><i class="fas fa-hotel"></i> Hotels</div>
-          <div class="tabbed-box__tabs--links">Flights + Hotels <span class="attention">Save</span></div>
-          <div class="tabbed-box__tabs--links"><i class="fas fa-gift"></i> Holidays</div>
+          <div class="tabbed-box__tabs--links is-active flights-tab"><i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights</div>
+          <div class="tabbed-box__tabs--links hotels-tab"><i class="fas fa-hotel"></i> Hotels</div>
+          <div class="tabbed-box__tabs--links combo-tab">Flights + Hotels <span class="attention">Save</span></div>
+          <div class="tabbed-box__tabs--links holiday-tab"><i class="fas fa-gift"></i> Holidays</div>
         </div>
         <div class="tabbed-box__tabcontent">
-          <div class="tabbed-box__tabcontent--row">
-            <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR FLIGHTS</h2>
-            <div class="tabbed-box__tabcontent--btnGroup">
-              <button class="is-selected">Domestic</button>
-              <button>International</button>
+          <div class="flight-content is-current">
+            <div class="tabbed-box__tabcontent--row">
+              <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR FLIGHTS</h2>
+              <div class="tabbed-box__tabcontent--btnGroup">
+                <button class="btnDomestic is-selected">Domestic</button>
+                <button class="btnInternational">International</button>
+              </div>
+            </div>
+            <form class="tabbed-box__tabcontent--flights-form">
+              <div class="tabbed-box__tabcontent--flights-form__row">
+                <div class="tabbed-box__tabcontent--flights-form__item col-2">
+                  <div><label for="from">FROM</label></div>
+                  <input type="text" name="from" id="from" placeholder="Eg. Melbourne, Australia" />
+                </div>
+                <div class="tabbed-box__tabcontent--flights-form__item col-2">
+                  <div><label for="to">TO</label></div>
+                  <input type="text" name="to" id="to" placeholder="Eg. New York, United States" />
+                </div>
+              </div>
+              <div class="tabbed-box__tabcontent--flights-form__row">
+                <div class="tabbed-box__tabcontent--flights-form__item col-3">
+                  <div><label for="departure">DEPARTURE</label></div>
+                  <input
+                    type="text"
+                    onmouseenter="(this.type='date')"
+                    onmouseout="(this.type='text')"
+                    name="departure"
+                    id="departure"
+                    placeholder="MM/DD/YYYY"
+                  />
+                </div>
+                <div class="tabbed-box__tabcontent--flights-form__item col-3">
+                  <div><label for="RETURN">RETURN</label></div>
+                  <input type="text" onmouseenter="(this.type='date')" onmouseout="(this.type='text')" name="RETURN" id="RETURN" placeholder="MM/DD/YYYY" />
+                </div>
+                <div class="tabbed-box__tabcontent--flights-form__item col-3">
+                  <div><label for="ADULTS">ADULTS</label></div>
+                  <input type="number" name="ADULTS" id="ADULTS" placeholder="2" />
+                </div>
+              </div>
+
+              <button class="tabbed-box__tabcontent--search">SEARCH FLIGHTS</button>
+              <p class="tabbed-box__tabcontent--advanced-search">Advanced Search</p>
+            </form>
+          </div>
+          <div class="hotel-content">
+            <div class="tabbed-box__tabcontent--row">
+              <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR HOTEL</h2>
+              <div class="tabbed-box__tabcontent--btnGroup">
+                <button class="btnDomestic is-selected">Domestic</button>
+                <button class="btnInternational">International</button>
+              </div>
             </div>
           </div>
-          <form class="tabbed-box__tabcontent--flights-form">
-            <div class="tabbed-box__tabcontent--flights-form__row">
-              <div class="tabbed-box__tabcontent--flights-form__item col-2">
-                <div><label for="from">FROM</label></div>
-                <input type="text" name="from" id="from" placeholder="Eg. Melbourne, Australia" />
-              </div>
-              <div class="tabbed-box__tabcontent--flights-form__item col-2">
-                <div><label for="to">TO</label></div>
-                <input type="text" name="to" id="to" placeholder="Eg. New York, United States" />
+          <div class="hotel-content">
+            <div class="tabbed-box__tabcontent--row">
+              <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR HOTEL</h2>
+              <div class="tabbed-box__tabcontent--btnGroup">
+                <button class="btnDomestic is-selected">Domestic</button>
+                <button class="btnInternational">International</button>
               </div>
             </div>
-
-            <div class="tabbed-box__tabcontent--flights-form__row">
-              <div class="tabbed-box__tabcontent--flights-form__item col-3">
-                <div><label for="departure">DEPARTURE</label></div>
-                <input type="text" name="departure" id="departure" placeholder="MM/DD/YYYY" />
-              </div>
-              <div class="tabbed-box__tabcontent--flights-form__item col-3">
-                <div><label for="RETURN">RETURN</label></div>
-                <input type="text" name="RETURN" id="RETURN" placeholder="MM/DD/YYYY" />
-              </div>
-              <div class="tabbed-box__tabcontent--flights-form__item col-3">
-                <div><label for="ADULTS">ADULTS</label></div>
-                <input type="text" name="ADULTS" id="ADULTS" placeholder="2" />
+          </div>
+          <div class="flights-hotels-content">
+            <div class="tabbed-box__tabcontent--row">
+              <h2 class="tabbed-box__tabcontent--headerRow">FLIGHTS AND HOTELS</h2>
+              <div class="tabbed-box__tabcontent--btnGroup">
+                <button class="btnDomestic is-selected">Domestic</button>
+                <button class="btnInternational">International</button>
               </div>
             </div>
-
-            <button class="tabbed-box__tabcontent--search">SEARCH FLIGHTS</button>
-            <p class="tabbed-box__tabcontent--advanced-search">Advanced Search</p>
-          </form>
+          </div>
+          <div class="holidays-content">
+            <div class="tabbed-box__tabcontent--row">
+              <h2 class="tabbed-box__tabcontent--headerRow">HOLIDAY SPECIALS</h2>
+              <div class="tabbed-box__tabcontent--btnGroup">
+                <button class="btnDomestic is-selected">Domestic</button>
+                <button class="btnInternational">International</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
