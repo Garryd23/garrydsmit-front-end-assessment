@@ -208,25 +208,10 @@
   }
 }
 
-.hotel-content {
-  display: none;
-}
-
 .is-current {
   display: block;
 }
 
-.flights-hotels-content {
+.is-hidden {
   display: none;
-}
-
-.is-current {
-  display: block;
-}
-.holidays-content {
-  display: none;
-}
-
-.is-current {
-  display: block;
 }

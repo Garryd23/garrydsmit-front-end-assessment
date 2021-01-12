@@ -98,10 +98,12 @@
     <div class="wrapper">
       <div class="tabbed-box">
         <div class="tabbed-box__tabs">
-          <div class="tabbed-box__tabs--links is-active flights-tab"><i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights</div>
-          <div class="tabbed-box__tabs--links hotels-tab"><i class="fas fa-hotel"></i> Hotels</div>
-          <div class="tabbed-box__tabs--links combo-tab">Flights + Hotels <span class="attention">Save</span></div>
-          <div class="tabbed-box__tabs--links holiday-tab"><i class="fas fa-gift"></i> Holidays</div>
+          <div content=".flight-content" class="tabbed-box__tabs--links is-active flights-tab">
+            <i class="fas fa-plane tabbed-box__tabs--links--planeicon"></i> Flights
+          </div>
+          <div content=".hotel-content" class="tabbed-box__tabs--links hotels-tab"><i class="fas fa-hotel"></i> Hotels</div>
+          <div content=".combo-content" class="tabbed-box__tabs--links combo-tab">Flights + Hotels <span class="attention">Save</span></div>
+          <div content=".holidays-content" class="tabbed-box__tabs--links holiday-tab"><i class="fas fa-gift"></i> Holidays</div>
         </div>
         <div class="tabbed-box__tabcontent">
           <div class="flight-content is-current">
@@ -149,41 +151,23 @@
               <p class="tabbed-box__tabcontent--advanced-search">Advanced Search</p>
             </form>
           </div>
-          <div class="hotel-content">
+          <div class="hotel-content is-hidden">
             <div class="tabbed-box__tabcontent--row">
               <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR HOTEL</h2>
-              <div class="tabbed-box__tabcontent--btnGroup">
-                <button class="btnDomestic is-selected">Domestic</button>
-                <button class="btnInternational">International</button>
-              </div>
             </div>
+            <p>Hotel booking details go here...</p>
           </div>
-          <div class="hotel-content">
-            <div class="tabbed-box__tabcontent--row">
-              <h2 class="tabbed-box__tabcontent--headerRow">BOOK YOUR HOTEL</h2>
-              <div class="tabbed-box__tabcontent--btnGroup">
-                <button class="btnDomestic is-selected">Domestic</button>
-                <button class="btnInternational">International</button>
-              </div>
-            </div>
-          </div>
-          <div class="flights-hotels-content">
+          <div class="combo-content is-hidden">
             <div class="tabbed-box__tabcontent--row">
               <h2 class="tabbed-box__tabcontent--headerRow">FLIGHTS AND HOTELS</h2>
-              <div class="tabbed-box__tabcontent--btnGroup">
-                <button class="btnDomestic is-selected">Domestic</button>
-                <button class="btnInternational">International</button>
-              </div>
             </div>
+            <p>Hotel and Flight booking details go here...</p>
           </div>
-          <div class="holidays-content">
+          <div class="holidays-content is-hidden">
             <div class="tabbed-box__tabcontent--row">
               <h2 class="tabbed-box__tabcontent--headerRow">HOLIDAY SPECIALS</h2>
-              <div class="tabbed-box__tabcontent--btnGroup">
-                <button class="btnDomestic is-selected">Domestic</button>
-                <button class="btnInternational">International</button>
-              </div>
             </div>
+            <p>Holiday info and specials go here...</p>
           </div>
         </div>
       </div>
